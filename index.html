@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <title>TMD Scribd Downloader</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo-icon"></div>
+    </nav>
+
+    <main>
+        <form id="downloadForm">
+            <div class="input-group mb-2">
+                <span class="input-group-text link-icon">
+                    <i class="bi bi-link-45deg"></i>
+                </span>
+                <input type="text" class="form-control" id="scribdLink" 
+                       placeholder="Paste scribd or slideshare link" required>
+            </div>
+
+            <!-- First Switch (SD/HD) -->
+            <div class="switch-container mb-1">
+                <span class="slider-label sd-label" id="sdLabel">SD</span>
+                <div class="switch">
+                    <input type="checkbox" id="sliderToggle">
+                    <label class="slider" for="sliderToggle"></label>
+                </div>
+                <span class="slider-label hd-label" id="hdLabel">HD</span>
+            </div>
+
+            <!-- Second Switch (PDF/PPTX) -->
+            <div class="switch-container-2 mb-2">
+                <span class="slider-2-label pdf-label" id="pdfLabel">PDF</span>
+                <div class="switch-2">
+                    <input type="checkbox" id="sliderToggleFormat">
+                    <label class="slider-2" for="sliderToggleFormat"></label>
+                </div>
+                <span class="slider-2-label pptx-label" id="pptxLabel">PPTX</span>
+            </div>
+
+            <div class="alert alert-danger error-message" role="alert">
+                <i class="bi bi-exclamation-octagon me-2"></i>
+            </div>
+
+            <button type="submit" class="btn download-btn btn-lg px-4 mt-5" id="downloadBtn">
+                <i class="bi bi-download me-2"></i>
+                Download
+            </button>
+        </form>
+    <div class="modal fade" id="confirmationModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content confirmation-modal">
+                    <div class="confirmation-title">
+                        <i class="bi bi-file-pdf me-2"></i>
+                        <span id="fileName">Something went wrong. Try again to download.</span>
+                    </div>
+                    <div>File type: <strong id="fileType">PDF</strong></div>
+                    <button class="download-modal-btn" id="finalDownloadBtn">
+                        <i class="bi bi-download me-2"></i>
+                        <span id="downloadButtonText">Download as PDF</span>
+                    </button>
+                    <p class="note-text">
+                        <i class="bi bi-info-circle me-1"></i>
+                        <strong>Note:</strong> Download link will open in <i class="bi bi-box-arrow-up-right mx-1"></i>New Window
+                        Please allow Popup to download.
+                    </p>
+                </div>
+            </div>
+        </div>
+		<footer>
+        <div class="footer-content">
+            <img src="images/grivei.png" alt="Footer Image" class="footer-image">
+        </div>
+    </footer>
+    </main>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="js/url.js"></script>
+    <script src="js/scribd.js"></script>
+	<script src="js/slider.js"></script
+</body>
+</html>
